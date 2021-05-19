@@ -1,2 +1,0 @@
-# MecatoValluno
-Mecato Valluno
