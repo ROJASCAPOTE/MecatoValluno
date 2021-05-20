@@ -11,7 +11,7 @@ class MateriaPrimaController extends Controller{
     }
 
     function index(){
-        $this->dataUser = $this->auth(3);
+        $this->dataUser = $this->auth([3,6]);
         $this->renderView('Views/admin/materia_prima/index.php', 'template');
     }
 
