@@ -77,7 +77,7 @@
       </a>
     <?php } ?>
 
-      <?php if($user['rol_id'] == 6 || $user['rol_id'] == 2) { ?>
+      <?php if($user['rol_id'] == 2) { ?>
       <!-- Users: subUsers -->
       <ul id="subUsers" class="side-nav-menu side-nav-menu-second-level mb-0">
         <li class="side-nav-menu-item">
@@ -85,7 +85,7 @@
         </li>
       <?php } ?>
 
-        <?php if($user['rol_id'] == 1 || $user['rol_id'] == 6) { ?>
+        <?php if($user['rol_id'] == 6) { ?>
         <li class="side-nav-menu-item">
           <a class="side-nav-menu-link" href="<?php echo URL_PATH; ?>usuarios/proveedores">Proveedores</a>
         </li>

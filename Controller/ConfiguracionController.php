@@ -6,10 +6,12 @@ class ConfiguracionController extends Controller{
 
 
     function __construct(){
+        $this->dataUser = $this->auth();
         $this->config = new Config();
     }
 
     function index(){
+        $this->auth(6);
         $this->renderView('Views/admin/config/index.php', 'template');
     }
 

@@ -2,7 +2,7 @@
 <div class="row">
   <input type="hidden" value="<?php echo URL_PATH; ?>" id="url-path">
     <div class="col-sm-12">
-        <div class="card">
+        <div class="card ">
             <div class="card-header">
                 <h5 class="h6 font-weight-semi-bold text-uppercase mb-0">Productos</h5>
             </div>

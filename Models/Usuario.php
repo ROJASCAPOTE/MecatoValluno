@@ -11,7 +11,17 @@ class Usuario extends bdConnect
     function traer($rol){
         $where_rol = '';
         if($rol != 0){
-            $where_rol = "WHERE usuarios.rol_id = $rol" . PHP_EOL;
+            switch ($rol) {
+                case '2': //Empleados
+                    $where_rol = "WHERE usuarios.rol_id != 6 AND usuarios.rol_id != 7 
+                    AND usuarios.rol_id != 5" . PHP_EOL;
+                    break;
+                
+                default:
+                    $where_rol = "WHERE usuarios.rol_id = $rol" . PHP_EOL;
+                    break;
+            }
+            
         }
         $conn = $this->conectar();
         $query = "SELECT usuarios.id, usuarios.nombre, usuarios.email, usuarios.dir, rol.nombre as rol,

@@ -1,6 +1,6 @@
 <?php
 
-require_once '/Controller/LoginController.php';
+require_once PATH_FOLDER . 'Controller/LoginController.php';
 
 class App 
 {
@@ -12,7 +12,7 @@ class App
         $url = rtrim($url, '/');
         $url = explode('/', $url);
 
-        $archivoController = 'Controller/' . $url[0] . 'Controller.php';
+        $archivoController = PATH_FOLDER . 'Controller/' . $url[0] . 'Controller.php';
         
         if(file_exists($archivoController) and $url[0] != ''){
             require_once $archivoController;
@@ -31,13 +31,14 @@ class App
                }
             }
 
-        }else if($archivoController == 'Controller/Controller.php'){
+        }else if($archivoController == PATH_FOLDER . 'Controller/Controller.php'){
             $controller = new LoginController(true);
         }
         else{
+            //var_dump($archivoController);
             echo '<h1>Error de ruta</h1>';
         }
-      } catch (Throwable $th) {
+      } catch (\Throwable $th) {
          echo '<h1>Error 500.';
       }  
         

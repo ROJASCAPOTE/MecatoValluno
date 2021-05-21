@@ -1,6 +1,7 @@
 <?php
 $path = str_replace('config.php','',realpath(__FILE__));
 $url_path = 'http://' . $_SERVER["HTTP_HOST"] . "/Mecateate/";
+//$url_path = 'http://' . $_SERVER["HTTP_HOST"] ; //Servidor
 
 //Datos para conexion a la BD
 $servername = "localhost";

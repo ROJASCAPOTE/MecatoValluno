@@ -29,8 +29,8 @@ if(isset($_SESSION["login"])){
     <!-- Template -->
     <link rel="stylesheet" href="<?php echo URL_PATH; ?>public/graindashboard/css/graindashboard.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
-    
-    
+    <link rel="stylesheet" href="<?php echo URL_PATH; ?>public/demo/chartist-plugin-tooltip.css">
+    <link rel="stylesheet" href="<?php echo URL_PATH; ?>public/css/main.css">
 </head>
 
 <body class="has-sidebar has-fixed-sidebar-and-header">

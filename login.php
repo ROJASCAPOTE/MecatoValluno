@@ -47,7 +47,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Identificarse</h4>
-                                <form action="<?php echo URL_PATH; ?>login/iniciar" method="POST">
+                                <form action="<?php echo URL_PATH; ?>Login/iniciar" method="POST">
                                     <div class="form-group">
                                         <label for="email">Correo</label>
                                         <input id="email" type="email" class="form-control" name="email" required=""
