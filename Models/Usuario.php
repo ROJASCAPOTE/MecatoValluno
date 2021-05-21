@@ -11,12 +11,22 @@ class Usuario extends bdConnect
     function traer($rol){
         $where_rol = '';
         if($rol != 0){
-            $where_rol = "WHERE usuarios.rol_id = $rol" . PHP_EOL;
+            switch ($rol) {
+                case '2': //Empleados
+                    $where_rol = "WHERE usuarios.rol_id != 6 AND usuarios.rol_id != 7 
+                    AND usuarios.rol_id != 5" . PHP_EOL;
+                    break;
+                
+                default:
+                    $where_rol = "WHERE usuarios.rol_id = $rol" . PHP_EOL;
+                    break;
+            }
+            
         }
         $conn = $this->conectar();
         $query = "SELECT usuarios.id, usuarios.nombre, usuarios.email, usuarios.dir, rol.nombre as rol,
             ciudad.nombre as ciudad, usuarios.ciudad_id, usuarios.fecha_registro, pais.id as pais_id,
-            IFNULL(sedes.nombre, 'Ninguna')  as sede, sedes.id as idsede
+            IFNULL(sedes.nombre, 'Ninguna')  as sede, sedes.id as idsede, usuarios.rol_id
             FROM usuarios
             INNER JOIN ciudad ON ciudad.id = usuarios.ciudad_id 
             INNER JOIN rol ON rol.id = usuarios.rol_id
@@ -39,7 +49,8 @@ class Usuario extends bdConnect
                 'dir' => $consulta['dir'],
                 'pais_id' => $consulta['pais_id'],
                 'sede' => $consulta['sede'],
-                'idsede' => $consulta['idsede']
+                'idsede' => $consulta['idsede'],
+                'rol_id' => $consulta['rol_id']
             ]);
             
         }

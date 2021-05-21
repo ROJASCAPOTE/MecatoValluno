@@ -54,7 +54,7 @@ $(function () {
             sede: $('#selectSede').val(),
             iduser: iduser == 0 ? null : iduser 
         }
-        console.log(datos)
+        //console.log(datos)
         //Validaciones
        for(const elem in datos){
 
@@ -255,7 +255,7 @@ $(function () {
 
     function actualizar_tabla(){
         let rol_filtro = $('#rol-vista').val()
-
+        $('#data-table').empty()
         $.ajax({
             url: url_path + 'usuarios/datos_tabla?rol=' + rol_filtro,
             type:"GET",

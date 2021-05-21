@@ -12,15 +12,17 @@ class UsuariosController extends Controller{
     function clientes(){
          //Este es el rol de los clientes que se va a usar para traer solo los usuarios clientes
         $data = [  
-            'rol' => 5
+            'rol' => 5,
+            'titulo' => 'Clientes'
         ]; 
-        $resul = $this->auth(2);
+        $resul = $this->auth([2,6]);
         $this->renderView('Views/admin/usuarios/sistema.php', 'template', $data);
     }
 
     function proveedores(){
         $data = [  
-            'rol' => 7
+            'rol' => 7,
+            'titulo' => 'Proveedores'
         ]; 
         $resul = $this->auth(1);
         $this->renderView('Views/admin/usuarios/sistema.php', 'template', $data);
@@ -28,18 +30,20 @@ class UsuariosController extends Controller{
 
     function empleados(){
         $data = [  
-            'rol' => 2
+            'rol' => 2,
+            'titulo' => 'Empleados'
         ]; 
-        $resul = $this->auth(1);
+        $resul = $this->auth([1,6]);
         $this->renderView('Views/admin/usuarios/sistema.php', 'template', $data);
     }
 
     function sistema(){
         $data = [  
-            'rol' => 0
+            'rol' => 0,
+            'titulo' => 'Sistema'
         ]; 
         $resul = $this->auth(6);
-        $this->renderView('Views/admin/usuarios/sistema.php', 'template');
+        $this->renderView('Views/admin/usuarios/sistema.php', 'template', $data);
     }
 
     function consultar_roles(){
