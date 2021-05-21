@@ -1,0 +1,13 @@
+.card-body img{
+	height: 300px;
+	max-height: 300px;
+}
+
+.card-poducto{
+	margin-bottom: 15px;
+}
+
+.btn-eliminar{
+	font-size: 2px !important;
+	margin-left: 5px;
+}
