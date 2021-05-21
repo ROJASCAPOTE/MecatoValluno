@@ -188,6 +188,7 @@ $(function () {
     })
 
     function actualizar_tabla(){
+        $('#data-table').empty()
         $.ajax({
             url: url_path + 'sedes/datos_tabla',
             type:"GET",
