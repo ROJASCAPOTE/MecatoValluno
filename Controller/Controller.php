@@ -21,16 +21,24 @@ class Controller{
     	}
     	$url = URL_PATH;
     	$rol_id = null;
-
+        $redirect = $url . 'dashboard';
     	if(!isset($_SESSION["login"])){
     		header("Location: $url" . PHP_EOL);
     	}
     	$data = $_SESSION["login"][0];
     	$rol_id = $data['rol_id'];
     	if($rol != null){
-    		if($rol_id != null && $rol_id != $rol ){
-    			echo '<h1 style="color: red;">No tiene permisos para esta vista.</h1>';
-    		}
+    		if (is_array($rol)) {
+                if(!in_array($rol_id, $rol)){
+                    //echo '<h1 style="color: red;">No tiene permisos para esta vista.</h1>';
+                    header("Location: $redirect" . PHP_EOL);
+                }
+            }else{
+                if($rol_id != null && $rol_id != $rol ){
+                    //echo '<h1 style="color: red;">No tiene permisos para esta vista.</h1>';
+                    header("Location: $redirect" . PHP_EOL);
+                }
+            }
     	}
 
     	return $data;

@@ -90,7 +90,7 @@ $(function () {
             return
 
         $.ajax({
-            url: url_path + 'paises/tiene_ciudades',
+            url: url_path + 'paises/eliminar',
             type: "POST",
             data: {
                 idpais
